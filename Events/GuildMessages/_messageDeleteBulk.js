@@ -4,12 +4,12 @@ const { clientId, chatLogs } = require("../../config.json")
 const createEmbed = require("../../Modules/embed.js").new
 
 module.exports = {
-  name: Events.MessageDelete,
+  name: Events.MessageDeleteBulk,
   async execute(message) {
 
     const fetchedLogs = await message.guild.fetchAuditLogs({
       limit: 1,
-      type: AuditLogEvent.MessageDelete
+      type: AuditLogEvent.MessageBulkDelete
     });
 
     const log = fetchedLogs.entries.first();
@@ -23,8 +23,8 @@ module.exports = {
     message.guild.channels.fetch(chatLogs).then(c => {
       c.send({
         embeds: [createEmbed({
-          title: "Message Deleted",
-          desc: `Author: ${message.author}\nMessage: ${message.content}`,
+          title: "Message Bulk Delete",
+          desc: `Executor: ${executor}`,
           footer: {text: executor.tag, iconURL: executor.displayAvatarURL()}
         })]
       })

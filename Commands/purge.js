@@ -9,8 +9,22 @@ module.exports = {
     .setDefaultMemberPermissions(PermissionFlagsBits.ManageMessages)
 
     .addSubcommand(subcommand => subcommand
+      .setName('channel')
+      .setDescription('Channel to purge.')
+
+      .addChannelOption(option => option
+        .setName('target')
+        .setDescription('Purges messages in this channel.')
+        .setRequired(true))
+
+      .addNumberOption(option => option
+        .setName('messages')
+        .setDescription('The amount of messages to purge.')
+        .setRequired(true)))
+
+    .addSubcommand(subcommand => subcommand
       .setName('user')
-      .setDescription('User to purge.')
+      .setDescription('User to purge (current channel).')
 
       .addUserOption(option => option
         .setName('target')
@@ -24,7 +38,7 @@ module.exports = {
 
     .addSubcommand(subcommand => subcommand
       .setName('role')
-      .setDescription('Purge messages from all users with this role.')
+      .setDescription('Purge messages from users with this role (current channel).')
 
       .addRoleOption(option => option
         .setName('target')
@@ -124,6 +138,28 @@ module.exports = {
           ephemeral: true,
           embeds: [createEmbed({
             desc: `Failed to purge messages from members with the role ${role}.`
+          })]
+        })
+      }
+    }
+    if (interaction.options.getSubcommand() === 'channel') {
+      const channel = interaction.options.getChannel('target')
+      try {
+
+        await channel.bulkDelete(messages, true)
+
+        interaction.reply({
+          ephemeral: true,
+          embeds: [createEmbed({
+            desc: `**Successfully purged** \`${messages}\` **messages in channel ${channel}!**`
+          })]
+        })
+      } catch (e) {
+        console.log(e)
+        interaction.reply({
+          ephemeral: true,
+          embeds: [createEmbed({
+            desc: `Failed to purge messages in channel ${channel}.`
           })]
         })
       }

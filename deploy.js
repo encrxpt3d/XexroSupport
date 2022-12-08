@@ -24,7 +24,7 @@ files.forEach((file) => {
     Table.addRow(`${file}`, "❌ FAILED");
   }
 })
-console.log(Table.toString());
+//console.log(Table.toString());
 
 const rest = new REST({ version: '10' }).setToken(token);
 

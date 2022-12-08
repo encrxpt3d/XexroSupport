@@ -14,7 +14,7 @@ module.exports = {
       c.send({
         embeds: [createEmbed({
           title: "Message Edited",
-          desc: `Old Message: \`${oldMessage.content}\`\nNew Message: \`${newMessage.content}\``,
+          desc: `Old Message: ${oldMessage.content}\nNew Message: ${newMessage.content}`,
           footer: {text: newMessage.author.tag, iconURL: newMessage.author.displayAvatarURL()}
         })]
       })
