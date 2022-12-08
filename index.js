@@ -39,5 +39,5 @@ files.forEach(async (file) => {
 //-------------------------------------------------------------------------------------------
 
 const token = process.env['TOKEN']
-keepAlive();
-client.login(token);
+keepAlive()
+client.login(token)

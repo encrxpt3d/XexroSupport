@@ -25,7 +25,11 @@ module.exports = {
           deny: 'ViewChannel'
         },
         {
-          id: staffRole,
+          id: juniorMM,
+          allow: 'ViewChannel'
+        },
+        {
+          id: seniorMM,
           allow: 'ViewChannel'
         },
         {
@@ -53,7 +57,7 @@ module.exports = {
         }), createEmbed({
           desc: `Request: \`${requestReason}\`\nOther Trader: \`${otherTrader}\``
         })],
-        content: `Thanks for using our services, <@${interaction.user.id}>! A member of the <@&${juniorMM}> or <@${seniorMM} team will get to you shortly.`,
+        content: `Thanks for using our services, <@${interaction.user.id}>! A member of the <@&${juniorMM}> or <@&${seniorMM}> team will get to you shortly.`,
         components: [row]
       }).then(async m => {
         m.pin()
@@ -65,6 +69,6 @@ module.exports = {
         await wait(30000)
         interaction.deleteReply()
       })
-    }
+    })
   }
 }

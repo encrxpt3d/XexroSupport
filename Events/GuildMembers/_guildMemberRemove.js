@@ -62,7 +62,7 @@ module.exports = {
         channel.send({
           embeds: [createEmbed({
             title: `${member.user.tag} Kicked`,
-            desc: `<@${member.id}> was kicked from the server by <@${executor.id}> for reason:\`${r}\``
+            desc: `<@${member.id}> was kicked from the server by <@${executor.id}> for reason: \`${r}\``
           })]
         })
       }

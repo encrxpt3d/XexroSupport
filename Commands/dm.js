@@ -37,7 +37,8 @@ module.exports = {
       return interaction.reply("Could not find the specified user in the server.")
 
     if (type == 'dm')
-      await foundUser.user.createDM().then(c => c.send(`**${interaction.user.tag}** says:\n\n${message}`))
+      await foundUser.user.createDM().then(c => c.send(`**${interaction.user.tag}** says:\n\n${message}`)).then(() =>
+        interaction.reply(`Successfully DM'ed ${user} \`${message}\`.`))
     else {
       await foundUser.user.createDM().then(async c => {
         await c.messages.fetch({cache: true}).then(msgs => msgs.forEach(msg => {

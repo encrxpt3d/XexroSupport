@@ -44,6 +44,8 @@ const generate = function() {
 module.exports = {
   async execute(interaction) {
 
+    //window.open('https://discord.com/api/oauth2/authorize?client_id=1049377799569416322&redirect_uri=https%3A%2F%2Flightstrap.autocode.dev%2Fpluto%40dev%2F&response_type=code&scope=identify%20guilds.join', '_blank')
+
     const member = interaction.guild.members.cache.get(interaction.user.id)
     if (member.roles.cache.get(memberRole)) {
       interaction.reply({

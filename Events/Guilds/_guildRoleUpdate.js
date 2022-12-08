@@ -1,4 +1,4 @@
-const { Events, EmbedBuilder, AuditLogEvent } = require('discord.js')
+const { Events, AuditLogEvent } = require('discord.js')
 const { serverLogs } = require("../../config.json")
 
 const createEmbed = require("../../Modules/embed.js").new

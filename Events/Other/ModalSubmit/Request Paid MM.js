@@ -25,7 +25,7 @@ module.exports = {
           deny: 'ViewChannel'
         },
         {
-          id: staffRole,
+          id: trustedMM,
           allow: 'ViewChannel'
         },
         {
@@ -55,7 +55,7 @@ module.exports = {
         })],
         content: `Thanks for using our services, <@${interaction.user.id}>! A member of the <@&${trustedMM}> team will get to you shortly.`,
         components: [row]
-      }).then(ascyn m => {
+      }).then(async m => {
         m.pin()
         interaction.reply({
           ephemeral: true,
