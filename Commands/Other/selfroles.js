@@ -1,9 +1,9 @@
 const { SlashCommandBuilder, EmbedBuilder, PermissionFlagsBits, ActionRowBuilder, ButtonBuilder, ButtonStyle } = require('discord.js');
 const { CollectorUtils } = require('discord.js-collector-utils');
 
-const { giveawaysPing } = require("../config.json")
+const { giveawaysPing } = require("../../config.json")
 
-const createEmbed = require("../Modules/embed.js").new
+const createEmbed = require("../../Modules/embed.js").new
 
 module.exports = {
   data: new SlashCommandBuilder()
