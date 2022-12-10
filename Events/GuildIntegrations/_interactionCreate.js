@@ -4,21 +4,14 @@ module.exports = {
   name: Events.InteractionCreate,
   async execute(interaction) {
     if (interaction.isButton()) {
-      if (interaction.customId.match('_Close')) {
-        require("./Buttons/SupportTeam/Close").execute(interaction)
+      if (interaction.customId.match('Appl')) {
+        require(`./Buttons/${interaction.customId}`).execute(interaction)
       }
-      else if (interaction.customId.match('_Open')) {
-        require("./Buttons/SupportTeam/Open").execute(interaction)
+      else if (interaction.customId.match('_Approve')) {
+        require(`./Buttons/Approve`).execute(interaction)
       }
-      else if (interaction.customId.match('_Delete')) {
-        require("./Buttons/SupportTeam/Delete").execute(interaction)
-      }
-      else {
-        try {
-          require("./Buttons/" + interaction.customId).execute(interaction)
-        } catch (error) {
-          console.log("[ERROR]: ", error)
-        }
+      else if (interaction.customId.match('_Deny')) {
+        require(`./Buttons/Deny`).execute(interaction)
       }
     }
     else if (interaction.isModalSubmit()) {

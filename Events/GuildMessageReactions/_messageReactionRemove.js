@@ -1,5 +1,7 @@
 const { Events } = require('discord.js')
-const { clientId, giveawaysPing, gpoHubPerms, mmHubPerms } = require("../../config.json")
+const { clientId, giveawaysPing, gamenightPing, crPing, wosPing, carryPing, bfgPing } = require("../../config.json")
+
+const createEmbed = require("../../Modules/embed.js").new
 
 async function run(reaction, user) {
   try {
@@ -21,21 +23,34 @@ async function run(reaction, user) {
     case "🎉":
       role = giveawaysPing
       break;
-    case "🦀":
-      role = gpoHubPerms
+    case "🎮":
+      role = gamenightPing
       break;
-    case "🔄":
-      role = mmHubPerms
+    case "💬":
+      role = crPing
+      break;
+    case "🇱":
+      role = wosPing
+      break;
+    case "💸":
+      role = carryPing
+      break;
+    case "🥳":
+      role = bfgPing
       break;
   }
 
-  if (member.roles.cache.get(role)) {
+  if (member.roles.cache.has(role)) {
     member.roles.remove(role)
 
     await user.createDM({ force: true })
     const Role = guild.roles.cache.get(role)
 
-    user.send({ content: `Successfully removed role: **${Role.name}**` })
+    user.send({
+      embeds: [createEmbed({
+        desc: `Successfully added role: **${Role.name}**`
+      })]
+    })
   }
 }
 
