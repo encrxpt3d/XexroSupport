@@ -3,7 +3,10 @@ const { Events, EmbedBuilder } = require('discord.js')
 module.exports = {
   name: Events.InteractionCreate,
   async execute(interaction) {
-    if (interaction.isButton()) {
+    if (interaction.customId.match('Staff Application')) {
+      
+    }
+    else if (interaction.isButton()) {
       if (interaction.customId.match('Appl')) {
         require(`./Buttons/${interaction.customId}`).execute(interaction)
       }

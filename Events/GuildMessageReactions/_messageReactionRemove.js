@@ -48,7 +48,7 @@ async function run(reaction, user) {
 
     user.send({
       embeds: [createEmbed({
-        desc: `Successfully added role: **${Role.name}**`
+        desc: `Successfully removed role: **${Role.name}**`
       })]
     })
   }

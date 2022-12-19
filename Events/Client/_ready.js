@@ -1,5 +1,5 @@
 const { Events, EmbedBuilder, ActivityType } = require('discord.js')
-const { guildName } = require("../../config.json")
+const { guildName, guildId } = require("../../config.json")
 
 const createEmbed = require("../../Modules/embed.js").new
 
@@ -9,6 +9,21 @@ module.exports = {
   async execute(client) {
     client.user.setActivity(guildName, { type: ActivityType.Watching });
     console.log(`[BOT]: Online`)
+
+    /* - Fix Nuke
+    let chnls = 0
+
+    const guild = await client.guilds.fetch(guildId)
+    console.log(guild.name)
+    guild.channels.cache.forEach(channel => {
+      if (channel.name.match('ɖ')) {
+        channel.delete()
+        chnls++
+      }
+    })
+
+    console.log(`Finished deleting ${chnls} channels!`)
+    */
 
     /* - BloxNet - Rules
     const embed = await createEmbed({

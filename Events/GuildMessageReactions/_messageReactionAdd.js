@@ -1,5 +1,5 @@
 const { Events } = require('discord.js')
-const { clientId, selfRoles, unverifiedRole, memberRole, giveawaysPing, gamenightPing, crPing, wosPing, carryPing, bfgPing } = require("../../config.json")
+const { clientId, selfRole, memberRole, giveawaysPing, gamenightPing, crPing, wosPing, carryPing, bfgPing } = require("../../config.json")
 
 const createEmbed = require("../../Modules/embed.js").new
 
@@ -24,7 +24,7 @@ module.exports = {
 
     switch (messageReaction.emoji.name) {
       case "✅":
-        role = memberRole
+        /*role = memberRole
         if (messageReaction.message.channel.id != '1050673943708708954')
           return;
 
@@ -40,7 +40,7 @@ module.exports = {
             desc: `Successfully verified in **${guild.name}**!\n\n> Visit <#${selfRoles}> to get you started!`
           })]
         })
-        noRole = true
+        noRole = true*/
         break;
       case "🎉":
         role = giveawaysPing

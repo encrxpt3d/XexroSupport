@@ -24,7 +24,7 @@ module.exports = {
 
     const application = new ModalBuilder()
       .setCustomId(interaction.customId)
-      .setTitle('Staff Application Form')
+      .setTitle('Staff Application Form [PART 1]')
 
     const why = new TextInputBuilder()
       .setCustomId('why')
