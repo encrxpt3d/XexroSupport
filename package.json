@@ -1,20 +1,20 @@
 {
-  "name": "pluto",
+  "name": "serenity",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "dependencies": {
-    "fetch-blob": "^3.1.5",
-    "data-uri-to-buffer": "^4.0.0",
-    "formdata-polyfill": "^4.0.10",
-    "node-domexception": "^1.0.0",
-    "web-streams-polyfill": "^3.2.1",
-    "node-fetch": "^3.3.0",
     "ascii-table": "^0.0.9",
+    "data-uri-to-buffer": "^4.0.0",
     "discord.js": "^14.6.0",
     "discord.js-collector-utils": "^1.9.0",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
+    "fetch-blob": "^3.1.5",
+    "formdata-polyfill": "^4.0.10",
+    "node-domexception": "^1.0.0",
+    "node-fetch": "^3.3.0",
+    "npm": "^9.2.0",
+    "web-streams-polyfill": "^3.2.1",
     "wrench": "^1.5.9"
   },
   "devDependencies": {
@@ -27,12 +27,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/LightstrapRBX/Pluto-Support.git"
+    "url": "git+https://github.com/LightstrapRBX/Serenity.git"
   },
   "author": "Lightstrap",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/LightstrapRBX/Pluto-Support/issues"
+    "url": "https://github.com/LightstrapRBX/Serenity/issues"
   },
-  "homepage": "https://github.com/LightstrapRBX/Pluto-Support#readme"
+  "homepage": "https://github.com/LightstrapRBX/Serenity#readme",
+  "description": ""
 }

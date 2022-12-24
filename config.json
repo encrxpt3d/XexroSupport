@@ -1,32 +1,22 @@
 {
 
-  "guildName": "Bloxnet - Your BF Needs",
+  "guildName": "Serenity",
   
-  "clientId": "1050677383524528179",
-  "guildId": "956638860111130664",
+  "clientId": "1054493589012492298",
+  "guildId": "1050197425924620379",
 
-  "embedColor": "e9be12",
+  "embedColor": "1f2eff",
   
   "modLogs": "1050619696891830402",
   "chatLogs": "1050619743482159235",
   "memberLogs": "1050619772141842462",
   "serverLogs": "1050619817389981788",
-
-  "applications": "1050935364296130581",
-  
   "selfRoles": "1050621227384963142",
 
-  "unverifiedRole": "960558987034652722",
-  "memberRole": "1050679026185945169",
-  "pingsRole": "1050601479259562065",
-  
-  "staffRole": "1050601368018223184",
-
   "giveawaysPing": "1026862286696091678",
-  "gamenightPing": "1034832254918213632",
-  "crPing": "1014723113444986961",
-  "wosPing": "1050636452813357056",
-  "carryPing": "956691381223575592",
-  "bfgPing": "1050636571029807114"
+
+  "pingsRole": "1050601479259562065",
+  "memberRole": "1050679026185945169",
+  "staffRole": "1050601368018223184"
   
 }

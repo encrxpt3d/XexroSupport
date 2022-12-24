@@ -10,24 +10,9 @@ module.exports = {
     client.user.setActivity(guildName, { type: ActivityType.Watching });
     console.log(`[BOT]: Online`)
 
-    /* - Fix Nuke
-    let chnls = 0
-
-    const guild = await client.guilds.fetch(guildId)
-    console.log(guild.name)
-    guild.channels.cache.forEach(channel => {
-      if (channel.name.match('ɖ')) {
-        channel.delete()
-        chnls++
-      }
-    })
-
-    console.log(`Finished deleting ${chnls} channels!`)
-    */
-
-    /* - BloxNet - Rules
+    /* - Serenity - Rules
     const embed = await createEmbed({
-      title: `Rules - BloxNet`,
+      title: `Rules - Serenity`,
       desc: `**These rules will apply to every text channel and voice channel in the server.**\n\n**__Make sure to also check out Discord's TOS and Guidelines!__**\n\nhttps://discord.com/terms \nhttps://discord.com/guidelines \n\n`,
       footer: {text: `React to the ✅ below to show that you have read and understood the rules.`}
     })
@@ -56,20 +41,6 @@ module.exports = {
         embeds: [embed]
       }).then(m => m.react('✅'))
     })
-    */
-
-    /* - Blox Fruit Rewards
-    
-    client.channels.fetch('1050623370280058900').then(c => {
-      c.send({
-        content: '||@everyone||',
-        embeds: [createEmbed({
-          title: `Blox Fruits Rewards - BloxNet`,
-          desc: `*Here are our permanent rewards, that anyone can claim if you meet the requirements below.*\n*If in anyway you try to persuade someone into giving you rewards you will be banned.*\n\n***⊱ ───── Invite Rewards ───── ⊰***\n5 invites = Uncommon Fruit\n10 invites = Rare Fruit\n15 invites = Legendary Fruit\n25 invites = Mythical Fruit\n\n***⊱ ───── Boost Rewards ───── ⊰***\n1 boost = Legendary Fruit\n2 boost = Mythical Fruit\n5 boost = A perm fruit\n\n***⊱ ───── Bump Rewards ───── ⊰***\n3 bumps = Common Fruit\n10 bumps = Uncommon Fruit\n20 bumps = Rare Fruit\n30 bumps = Legendary Fruit\n40 bumps = A perm fruit\n\nDM <@529167697389420564>, <@800889873061773342>, or a BF reward giver to claim.\n\n*Invites will be reset after claiming.*`
-        })]
-      })
-    })
-    
     */
   }
 }

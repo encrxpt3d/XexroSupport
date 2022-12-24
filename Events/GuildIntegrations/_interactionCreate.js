@@ -3,18 +3,9 @@ const { Events, EmbedBuilder } = require('discord.js')
 module.exports = {
   name: Events.InteractionCreate,
   async execute(interaction) {
-    if (interaction.customId.match('Staff Application')) {
-      
-    }
-    else if (interaction.isButton()) {
+    if (interaction.isButton()) {
       if (interaction.customId.match('Appl')) {
         require(`./Buttons/${interaction.customId}`).execute(interaction)
-      }
-      else if (interaction.customId.match('_Approve')) {
-        require(`./Buttons/Approve`).execute(interaction)
-      }
-      else if (interaction.customId.match('_Deny')) {
-        require(`./Buttons/Deny`).execute(interaction)
       }
     }
     else if (interaction.isModalSubmit()) {

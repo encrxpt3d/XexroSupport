@@ -1,5 +1,5 @@
 const { Events } = require('discord.js')
-const { clientId, selfRole, memberRole, giveawaysPing, gamenightPing, crPing, wosPing, carryPing, bfgPing } = require("../../config.json")
+const { clientId, selfRoles, giveawaysPing } = require("../../config.json")
 
 const createEmbed = require("../../Modules/embed.js").new
 
@@ -23,49 +23,18 @@ module.exports = {
     let noRole = false;
 
     switch (messageReaction.emoji.name) {
-      case "✅":
-        /*role = memberRole
-        if (messageReaction.message.channel.id != '1050673943708708954')
-          return;
-
-        if (member.roles.cache.has(memberRole))
-          return;
-
-        await member.roles.remove(unverifiedRole)
-        await member.roles.add(memberRole)
-
-        await user.createDM({ force: true })
-        user.send({
-          embeds: [createEmbed({
-            desc: `Successfully verified in **${guild.name}**!\n\n> Visit <#${selfRoles}> to get you started!`
-          })]
-        })
-        noRole = true*/
-        break;
       case "🎉":
-        role = giveawaysPing
-        break;
-      case "🎮":
-        role = gamenightPing
-        break;
-      case "💬":
-        role = crPing
-        break;
-      case "🇱":
-        role = wosPing
-        break;
-      case "💸":
-        role = carryPing
-        break;
-      case "🥳":
-        role = bfgPing
+        if (messageReaction.message.channel.id == selfRoles)
+          role = giveawaysPing;
+        else
+          return;
         break;
       default:
         noRole = true;
         break;
     }
 
-    if (noRole == false && role != memberRole) {
+    if (noRole == false) {
       try {
         member.roles.add(role)
         await user.createDM({ force: true })

@@ -1,5 +1,5 @@
 const { Events } = require('discord.js')
-const { clientId, giveawaysPing, gamenightPing, crPing, wosPing, carryPing, bfgPing } = require("../../config.json")
+const { clientId, selfRoles, giveawaysPing } = require("../../config.json")
 
 const createEmbed = require("../../Modules/embed.js").new
 
@@ -21,22 +21,12 @@ async function run(reaction, user) {
 
   switch (reaction.emoji.name) {
     case "🎉":
-      role = giveawaysPing
+      if (reaction.message.channel.id == selfRoles)
+        role = giveawaysPing;
+        else
+        return;
       break;
-    case "🎮":
-      role = gamenightPing
-      break;
-    case "💬":
-      role = crPing
-      break;
-    case "🇱":
-      role = wosPing
-      break;
-    case "💸":
-      role = carryPing
-      break;
-    case "🥳":
-      role = bfgPing
+    default:
       break;
   }
 
