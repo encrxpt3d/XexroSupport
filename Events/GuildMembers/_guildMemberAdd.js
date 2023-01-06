@@ -1,5 +1,5 @@
 const { Events } = require('discord.js')
-const { guildId, selfRoles, memberRole, pingsRole } = require("../../config.json")
+const { selfRoles, memberRole, pingsRole } = require("../../config.json")
 
 const createEmbed = require("../../Modules/embed").new
 
@@ -10,7 +10,7 @@ module.exports = {
     await member.user.createDM({ force: true })
     member.user.send({
       embeds: [createEmbed({
-        desc: `Successfully verified in **${member.guild?.name}**!\n\n> Visit <#${selfRoles}> to get you started!`
+        desc: `Welcome to **${member.guild?.name}**!\n\n> Visit <#${selfRoles}> to get you started.`
       })]
     })
   }

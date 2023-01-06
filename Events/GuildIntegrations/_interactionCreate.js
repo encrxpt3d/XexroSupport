@@ -4,12 +4,10 @@ module.exports = {
   name: Events.InteractionCreate,
   async execute(interaction) {
     if (interaction.isButton()) {
-      if (interaction.customId.match('Appl')) {
-        require(`./Buttons/${interaction.customId}`).execute(interaction)
-      }
+      
     }
     else if (interaction.isModalSubmit()) {
-      require("./ModalSubmit/" + interaction.customId).execute(interaction)
+      //require("./ModalSubmit/" + interaction.customId).execute(interaction)
     }
     else if (interaction.isChatInputCommand()) {
 

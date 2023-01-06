@@ -1,7 +1,17 @@
 const { Events } = require('discord.js')
-const { clientId, selfRoles, giveawaysPing } = require("../../config.json")
+const { clientId, selfRoles, colorsRole, red, orange, yellow, green, blue, purple, pink } = require("../../config.json")
 
 const createEmbed = require("../../Modules/embed.js").new
+
+const colors = {
+  ymc_red: red,
+  ymc_orange: orange,
+  ymc_yellow: yellow,
+  ymc_green: green,
+  ymc_blue: blue,
+  ymc_purple: purple,
+  ymc_pink: pink
+}
 
 module.exports = {
   name: Events.MessageReactionAdd,
@@ -19,24 +29,29 @@ module.exports = {
     const guild = messageReaction.message.guild
     const member = guild.members.cache.get(user.id)
 
+    await messageReaction.message.reactions.cache.forEach(reaction => {
+      if (reaction.emoji.name != messageReaction.emoji.name)
+        reaction.users.remove(user)
+    })
+
     let role = null;
     let noRole = false;
 
-    switch (messageReaction.emoji.name) {
-      case "🎉":
-        if (messageReaction.message.channel.id == selfRoles)
-          role = giveawaysPing;
-        else
-          return;
-        break;
-      default:
-        noRole = true;
-        break;
-    }
+    role = colors[messageReaction.emoji.name] ?? null
 
-    if (noRole == false) {
+    if (role == null)
+      noRole = true
+
+    if (member.roles.cache.has(role) == false && noRole == false) {
       try {
+        await member.roles.cache.forEach(r => {
+          if (r.name.match('YMC-'))
+            member.roles.remove(r)
+        })
+        
         member.roles.add(role)
+        member.roles.add(colorsRole)
+        
         await user.createDM({ force: true })
         const Role = guild.roles.cache.get(role)
 
