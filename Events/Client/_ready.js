@@ -10,9 +10,9 @@ module.exports = {
     client.user.setActivity(guildName, { type: ActivityType.Watching });
     console.log(`[BOT]: Online`)
 
-    /* - YMC - Rules
+    /* - Xexrö ツ Community - Rules
     const embed = createEmbed({
-      title: `Rules - YMC`,
+      title: `Rules - Xexrö ツ Community`,
       desc: `**These rules will apply to every text channel and voice channel in the server.**\n\n**__Make sure to also check out Discord's TOS and Guidelines!__**\n\nhttps://discord.com/terms \nhttps://discord.com/guidelines \n\n-`,
       footer: { text: `React to the ✅ below to show that you have read and understood the rules.` }
     })
@@ -35,7 +35,7 @@ module.exports = {
       { name: 'ᕗ Rule. 15', value: `Finally, use common sense. If you think your message may violate any one of these rules and will get you in trouble, then don't post it.\n` }
     )
 
-    client.channels.fetch('1053914998335885362').then(c => {
+    client.channels.fetch('1059285168554258483').then(c => {
       c.send({
         content: '||@everyone||',
         embeds: [embed]
@@ -45,8 +45,8 @@ module.exports = {
 
     /*
     const embed2 = createEmbed({
-      title: `Color Roles - YMC`,
-      desc: `**React to the following emojis to get your specified color role!**\n\n<:ymc_red:1057359730844110878>: <@&1053919799375319050>\n<:ymc_orange:1057359737756327966>: <@&1053919801946419290>\n<:ymc_yellow:1057359734715465848>: <@&1053919802781093919>\n<:ymc_green:1057359736049238106>: <@&1053919800574877748>\n<:ymc_blue:1057359732291141753>: <@&1053919804010012732>\n<:ymc_purple:1057359733482328166>: <@&1053919799920566282>\n<:ymc_pink:1057359728436580558>: <@&1053919801459867719>`,
+      title: `Self Roles -  Xexrö ツ Community`,
+      desc: `**React to the following emojis to get your specified ping role!**\n\n🎉: <@&1060770200770842684>\n⚔️: <@&1060770201081229323>`,
       footer: { text: `Lightstrap#0658` }
     })
 
@@ -56,13 +56,8 @@ module.exports = {
         embeds: [embed2]
       }).then(m => {
         
-        m.react('<:ymc_red:1057359730844110878>')
-        m.react('<:ymc_orange:1057359737756327966>')
-        m.react('<:ymc_yellow:1057359734715465848>')
-        m.react('<:ymc_green:1057359736049238106>')
-        m.react('<:ymc_blue:1057359732291141753>')
-        m.react('<:ymc_purple:1057359733482328166>')
-        m.react('<:ymc_pink:1057359728436580558>')
+        m.react('🎉')
+        m.react('⚔️')
       })
     })
     */
